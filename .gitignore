@@ -1,1 +1,42 @@
+# Build artifacts
+bin/
+obj/
+out/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio & VS Code settings
 .vs/
+.vscode/
+
+# Logs & temp files
+*.log
+*.tmp
+*.bak
+
+# OS-generated files
+Thumbs.db
+.DS_Store
+
+# NuGet packages (optional if using package restore)
+packages/
+*.nupkg
+
+# Environment & secrets
+.env
+
+# Coverage & test results
+coverage/
+*.coverage
+*.coveragexml
+
+# Publish output
+publish/
+wwwroot/
+
+# Node.js (if applicable)
+node_modules/
