@@ -56,7 +56,12 @@
     <Compile Include="Migrations\202509221019052_InitDbUser.Designer.cs">
       <DependentUpon>202509221019052_InitDbUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202509221555114_InitDbEmployee.cs" />
+    <Compile Include="Migrations\202509221555114_InitDbEmployee.Designer.cs">
+      <DependentUpon>202509221555114_InitDbEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -67,6 +72,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202509221019052_InitDbUser.resx">
       <DependentUpon>202509221019052_InitDbUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202509221555114_InitDbEmployee.resx">
+      <DependentUpon>202509221555114_InitDbEmployee.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
