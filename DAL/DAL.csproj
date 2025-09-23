@@ -52,6 +52,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDbContext.cs" />
+    <Compile Include="DataAccessFactory.cs" />
+    <Compile Include="Interfaces\IemployessRepo.cs" />
     <Compile Include="Migrations\202509221019052_InitDbUser.cs" />
     <Compile Include="Migrations\202509221019052_InitDbUser.Designer.cs">
       <DependentUpon>202509221019052_InitDbUser.cs</DependentUpon>

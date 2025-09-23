@@ -1,19 +1,19 @@
 ﻿using DAL.Interfaces;
 using DAL.Models;
+using DAL.Repos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.Repos
+namespace DAL
 {
-    internal class EmployeeRepo : IemployessRepo
+    public class DataAccessFactory
     {
-        AppDbContext db = new AppDbContext();
-        public List<Employee>Get()
+        public static IemployessRepo EmployeeData()
         {
-            return db.Employees.ToList();
+            return new EmployeeRepo();
         }
     }
 }

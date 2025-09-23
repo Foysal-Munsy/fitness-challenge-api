@@ -1,4 +1,7 @@
-﻿using DAL.Models;
+﻿using AutoMapper;
+using BLL.DTOs;
+using DAL;
+using DAL.Models;
 using DAL.Repos;
 using System;
 using System.Collections.Generic;
@@ -10,36 +13,19 @@ namespace BLL.Services
 {
     public class EmployeeService
     {
-        public static object Get()
+       public static Mapper GetMapper()
         {
-            // to get the data from EmployeeRepo
-            // EmployeeRepo Extract the data
-            return EmployeeRepo.Get();
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Employee, EmployeeDTO>().ReverseMap();
+            });
+            return new Mapper(config);
         }
 
-        //logic implementation for test
-        public static List<Employee> Get10()
+        public static List<EmployeeDTO> Get()
         {
-            var data = from e in EmployeeRepo.Get()
-                       where e.Id < 11
-                       select e;
-            return data.ToList();
-        }
-        public static Employee Get(int id)
-        {
-            return EmployeeRepo.Get(id);
-        }
-        public static bool Create(Employee employee)
-        {
-            return EmployeeRepo.Create(employee);
-        }
-        public static bool Update(Employee employee)
-        {
-            return EmployeeRepo.Update(employee);
-        }
-        public static bool Delete(int id)
-        {
-            return EmployeeRepo.Delete(id);
+            var data = DataAccessFactory.EmployeeData().Get();
+            return GetMapper().Map<List<EmployeeDTO>>(data);
         }
     }
 }
