@@ -10,7 +10,7 @@ namespace DAL.Repos
     public class EmployeeRepo
     {
         static AppDbContext dbContext;
-        public EmployeeRepo() 
+        static EmployeeRepo() 
         {
             dbContext = new AppDbContext();
         }
