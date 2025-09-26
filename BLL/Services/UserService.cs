@@ -46,5 +46,19 @@ namespace BLL.Services
             return data;
 
         }
+        public static bool Delete(int id)
+        {
+            var data = DataAccessFactory.UserData().Delete(id);
+            return data;
+        }
+        public static UserDTO CalcBMI(int id)
+        {
+            var user = DataAccessFactory.UserData().GetById(id);
+            if(user == null) return null;
+
+            var dto = GetMapper().Map<UserDTO>(user);
+            dto.BMI = BMIHelper.CalculateBMI(user.Height, user.Weight);
+            return dto;
+        }
     }
 }

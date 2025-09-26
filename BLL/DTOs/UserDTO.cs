@@ -22,6 +22,7 @@ namespace BLL.DTOs
         public double Height { get; set; }
         public double Weight { get; set; }
         public int DailyCalorieGoal { get; set; }
+        public double BMI { get; set; }
 
         //public ICollection<Workout> Workouts { get; set; } = new List<Workout>();
         //public ICollection<Challenge> Challenges { get; set; } = new List<Challenge>();

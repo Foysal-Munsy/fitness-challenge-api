@@ -69,5 +69,38 @@ namespace ApplicationLayer.Controllers
                 return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
             }
         }
+        [HttpDelete]
+        [Route("delete/{id}")]
+        public HttpResponseMessage Delete(int id)
+        {
+            try
+            {
+                var data = UserService.Delete(id);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("bmi/{id}")]
+        public HttpResponseMessage CalcBMI(int id)
+        {
+            try
+            {
+                var data = UserService.CalcBMI(id);
+                if (data == null)
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "User not found");
+
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
     }
 }
