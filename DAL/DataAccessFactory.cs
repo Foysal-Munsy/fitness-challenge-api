@@ -15,5 +15,9 @@ namespace DAL
         {
             return new EmployeeRepo();
         }
+        public static IUserRepo UserData()
+        {
+            return new UserRepo();
+        }
     }
 }
