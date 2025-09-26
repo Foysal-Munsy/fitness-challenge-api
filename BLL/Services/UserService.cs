@@ -77,8 +77,15 @@ namespace BLL.Services
             var users = DataAccessFactory.UserData().Get();
             var workouts = DataAccessFactory.WorkoutData().Get();
             return LeaderboardHelper.GetLeaderboard(users,workouts);
-
-                
         }
+        public static UserGoalStatusDTO GetGoalStatus(int id)
+        {
+            var user = DataAccessFactory.UserData().GetById(id);
+            if (user == null) return null;
+
+            var workouts = DataAccessFactory.WorkoutData().Get();
+            return GoalStatusHelper.GetGoalStatus(user, workouts);
+        }
+
     }
 }

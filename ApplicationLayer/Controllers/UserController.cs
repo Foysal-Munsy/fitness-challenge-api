@@ -135,6 +135,27 @@ namespace ApplicationLayer.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("goal-status/{id}")]
+        public HttpResponseMessage GetGoalStatus(int id)
+        {
+            try
+            {
+                var data = UserService.GetGoalStatus(id);
+                if (data == null)
+                {
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "User not found.");
+                }
+
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+
 
     }
 }
