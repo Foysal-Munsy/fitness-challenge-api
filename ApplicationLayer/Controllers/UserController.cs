@@ -41,5 +41,19 @@ namespace ApplicationLayer.Controllers
             }
 
         }
+        [HttpGet]
+        [Route("{id}")]
+        public HttpResponseMessage GetById(int id)
+        {
+            try
+            {
+                var data = UserService.GetById(id);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+        }
     }
 }
