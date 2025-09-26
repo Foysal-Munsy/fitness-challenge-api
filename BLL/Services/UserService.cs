@@ -71,5 +71,14 @@ namespace BLL.Services
             dto.Recommendation = RecommendationHelper.GetRecommendation(dto.BMI);
             return dto;
         }
+
+        public static List<UserLeaderboardDTO> GetLeaderboard()
+        {
+            var users = DataAccessFactory.UserData().Get();
+            var workouts = DataAccessFactory.WorkoutData().Get();
+            return LeaderboardHelper.GetLeaderboard(users,workouts);
+
+                
+        }
     }
 }

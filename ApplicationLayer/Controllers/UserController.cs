@@ -120,6 +120,21 @@ namespace ApplicationLayer.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("leaderboard")]
+        public HttpResponseMessage GetLeaderboard()
+        {
+            try
+            {
+                List<UserLeaderboardDTO> leaderboard = UserService.GetLeaderboard();
+                return Request.CreateResponse(HttpStatusCode.OK, leaderboard);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
 
     }
 }

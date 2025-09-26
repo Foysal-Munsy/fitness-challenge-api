@@ -28,7 +28,7 @@ namespace ApplicationLayer.Controllers
 
         [HttpGet]
         [Route("filter")]
-        public HttpResponseMessage GetByDateRange(DateTime from, DateTime to)
+        public HttpResponseMessage FilterByDateRange(DateTime from, DateTime to)
         {
             try
             {
