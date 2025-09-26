@@ -26,5 +26,16 @@ namespace BLL.Services
             var data = DataAccessFactory.WorkoutData().Get();
             return GetMapper().Map<List<WorkoutDTO>>(data);
         }
+
+        public static List<WorkoutDTO> FilterByDateRange(DateTime from, DateTime to)
+        {
+            var allWorkouts = DataAccessFactory.WorkoutData().Get(); 
+            var filtered = allWorkouts
+                .Where(w => w.Date >= from && w.Date <= to) 
+                .ToList();
+
+            return GetMapper().Map<List<WorkoutDTO>>(filtered);
+        }
+
     }
 }

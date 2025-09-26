@@ -10,5 +10,6 @@ namespace DAL.Interfaces
     public interface IWorkoutRepo
     {
         List<Workout> Get();
+
     }
 }

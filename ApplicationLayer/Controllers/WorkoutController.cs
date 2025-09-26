@@ -25,5 +25,21 @@ namespace ApplicationLayer.Controllers
                 return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
             }
         }
+
+        [HttpGet]
+        [Route("filter")]
+        public HttpResponseMessage GetByDateRange(DateTime from, DateTime to)
+        {
+            try
+            {
+                var data = WorkoutService.FilterByDateRange(from, to);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+        }
+
     }
 }
