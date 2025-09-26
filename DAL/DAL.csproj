@@ -55,6 +55,7 @@
     <Compile Include="DataAccessFactory.cs" />
     <Compile Include="Interfaces\IemployessRepo.cs" />
     <Compile Include="Interfaces\IUserRepo.cs" />
+    <Compile Include="Interfaces\IWorkoutRepo.cs" />
     <Compile Include="Migrations\202509221019052_InitDbUser.cs" />
     <Compile Include="Migrations\202509221019052_InitDbUser.Designer.cs">
       <DependentUpon>202509221019052_InitDbUser.cs</DependentUpon>
@@ -75,6 +76,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\EmployeeRepo.cs" />
     <Compile Include="Repos\UserRepo.cs" />
+    <Compile Include="Repos\WorkoutRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

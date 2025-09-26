@@ -19,5 +19,9 @@ namespace DAL
         {
             return new UserRepo();
         }
+        public static IWorkoutRepo WorkoutData()
+        {
+            return new WorkoutRepo();
+        }
     }
 }
