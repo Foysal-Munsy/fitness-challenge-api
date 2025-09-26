@@ -102,5 +102,24 @@ namespace ApplicationLayer.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("recommendation/{id}")]
+        public HttpResponseMessage GetRecommendation(int id)
+        {
+            try
+            {
+                var result = UserService.GetRecommendation(id);
+                if (result == null)
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "User not found");
+
+                return Request.CreateResponse(HttpStatusCode.OK, result);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+
     }
 }

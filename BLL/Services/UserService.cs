@@ -60,5 +60,16 @@ namespace BLL.Services
             dto.BMI = BMIHelper.CalculateBMI(user.Height, user.Weight);
             return dto;
         }
+
+        public static UserDTO GetRecommendation(int id)
+        {
+            var user = DataAccessFactory.UserData().GetById(id);
+            if (user == null) return null;
+
+            var dto = GetMapper().Map<UserDTO>(user);
+            dto.BMI = BMIHelper.CalculateBMI(user.Height, user.Weight);
+            dto.Recommendation = RecommendationHelper.GetRecommendation(dto.BMI);
+            return dto;
+        }
     }
 }
