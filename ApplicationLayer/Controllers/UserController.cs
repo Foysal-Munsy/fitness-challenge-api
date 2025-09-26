@@ -55,5 +55,19 @@ namespace ApplicationLayer.Controllers
                 return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
             }
         }
+        [HttpPatch]
+        [Route("update/{id}")]
+        public HttpResponseMessage Update(int id, UserDTO updatedUser)
+        {
+            try
+            {
+                var data = UserService.Update(id, updatedUser);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+        }
     }
 }

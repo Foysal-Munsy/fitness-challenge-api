@@ -38,14 +38,33 @@ namespace DAL.Repos
             return db.Users.Find(id);
         }
 
+        //public bool Update(int id, User updatedUser)
+        //{
+        //    var existingUser = db.Users.Find(id);
+        //    if (existingUser == null)
+        //        return false;
+
+        //    db.Entry(existingUser).CurrentValues.SetValues(updatedUser);
+        //    return db.SaveChanges() > 0;
+        //}
         public bool Update(int id, User updatedUser)
         {
             var existingUser = db.Users.Find(id);
-            if (existingUser == null)
-                return false;
+            if (existingUser == null) return false;
 
-            db.Entry(existingUser).CurrentValues.SetValues(updatedUser);
+
+            existingUser.Name = updatedUser.Name;
+            existingUser.Email = updatedUser.Email;
+            existingUser.Password = updatedUser.Password;
+            existingUser.Gender = updatedUser.Gender;
+            existingUser.Age = updatedUser.Age;
+            existingUser.Role = updatedUser.Role;
+            existingUser.Height = updatedUser.Height;
+            existingUser.Weight = updatedUser.Weight;
+            existingUser.DailyCalorieGoal = updatedUser.DailyCalorieGoal;
+
             return db.SaveChanges() > 0;
         }
+
     }
 }

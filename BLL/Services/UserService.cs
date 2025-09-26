@@ -39,5 +39,12 @@ namespace BLL.Services
             var data = DataAccessFactory.UserData().GetById(id);
             return GetMapper().Map<UserDTO>(data);
         }
+        public static bool Update(int id, UserDTO updatedUser)
+        {
+            var user = GetMapper().Map<User>(updatedUser);
+            var data = DataAccessFactory.UserData().Update(id, user);
+            return data;
+
+        }
     }
 }
