@@ -11,23 +11,32 @@ namespace DAL.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required, StringLength(50)]
-        public string Email { get; set; }
-        [Required, StringLength(50)]
-        public string UserName { get; set; }
         [Required]
-        public string Password { get; set; }
         [StringLength(50)]
         public string Name { get; set; }
-        public int? Age {  get; set; }
-        public float? Weight { get; set; }
-        public float? Height { get; set; }
-        [Required, StringLength(50)]
-        public string Role { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public DateTime LastUpdatedAt { get; set; }
-       
-        
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string Password { get; set; }
+        [Required]
+        [StringLength(20)]
+        public string Gender { get; set; }
+        [Required]
+        public int Age { get; set; }
+        public string Role { get; set; } // admin, basic user
+        [Required]
+        public double Height { get; set; }
+        [Required]
+        public double Weight { get; set; }
+        [Required]
+        public int DailyCalorieGoal { get; set; }
+
+        public ICollection<Workout> Workouts { get; set; } = new List<Workout>();
+        public ICollection<Challenge> Challenges { get; set; } = new List<Challenge>();
+
+
 
     }
 }

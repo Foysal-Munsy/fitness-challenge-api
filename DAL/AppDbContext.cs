@@ -12,6 +12,8 @@ namespace DAL
     {
         public DbSet<Employee> Employees { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Workout> Workouts { get; set; }
+        public DbSet<Challenge> Challenges { get; set; }
 
     }
 }

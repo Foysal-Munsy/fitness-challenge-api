@@ -24,6 +24,7 @@ namespace BLL.Services
 
         public static List<EmployeeDTO> Get()
         {
+            //logic
             var data = DataAccessFactory.EmployeeData().Get();
             return GetMapper().Map<List<EmployeeDTO>>(data);
         }
