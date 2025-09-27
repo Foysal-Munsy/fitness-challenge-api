@@ -35,19 +35,20 @@ A fitness tracking REST API built with **ASP.NET Web API**, **Entity Framework (
 ## API Testing (Postman Screenshots)
 
 **BMI**  
-![BMI](https://github.com/Foysal-Munsy/Foysal-Munsy/blob/main/fitness-challenge-api-readme-supported-image/bmi.png?raw=true)
+![BMI](https://github.com/Foysal-Munsy/readme-assets/blob/main/fitness-challenge-api-readme-supported-image/bmi.png?raw=true)
 
 **Workout Filtering**  
-![Filtering](https://github.com/Foysal-Munsy/Foysal-Munsy/blob/main/fitness-challenge-api-readme-supported-image/filtering.png?raw=true)
+![Filtering](https://github.com/Foysal-Munsy/readme-assets/blob/main/fitness-challenge-api-readme-supported-image/filtering.png?raw=true)
 
 **Goal Status**  
-![Goal Status](https://github.com/Foysal-Munsy/Foysal-Munsy/blob/main/fitness-challenge-api-readme-supported-image/goal-status.png?raw=true)
+![Goal Status](https://github.com/Foysal-Munsy/readme-assets/blob/main/fitness-challenge-api-readme-supported-image/goal-status.png?raw=true)
 
 **Leaderboard**  
-![Leaderboard](https://github.com/Foysal-Munsy/Foysal-Munsy/blob/main/fitness-challenge-api-readme-supported-image/leaderboard.png?raw=true)
+![Leaderboard](https://github.com/Foysal-Munsy/readme-assets/blob/main/fitness-challenge-api-readme-supported-image/leaderboard.png?raw=true)
 
 **Recommendation**  
-![Recommendation](https://github.com/Foysal-Munsy/Foysal-Munsy/blob/main/fitness-challenge-api-readme-supported-image/recommendation.png?raw=true)
+![Recommendation](https://github.com/Foysal-Munsy/readme-assets/blob/main/fitness-challenge-api-readme-supported-image/recommendation.png?raw=true)
+
 
 ---
 
